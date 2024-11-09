@@ -1,5 +1,7 @@
 @import url(variables.css);
-
+main{
+  font-family: Poppins;
+}
 .play-details {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -46,6 +48,19 @@ button{
 }
 .bg-none{
     background: none;
+}
+.dropdown-menu li{
+  cursor: pointer;
+}
+.score-board{
+  line-height: 2px;
+}
+.dropdown-menu li:hover{
+  background-color: white;
+  color: grey;
+}
+.time-remaining{
+  font-size: 0.8rem;
 }
 @media (max-width: 768px) {
   .play-details {

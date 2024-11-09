@@ -238,8 +238,11 @@ const showResult = () => {
         }</h2>
       </div>
       <div class="card-body ${bodyClass}">
-        <p class="card-text text-white">Score: ${score} points</p>
-        <p class="card-text text-white">Time remaining: ${timeLeft} seconds</p>
+      <div class="score-board">
+       <h1 class="card-text text-white">${score}</h1> 
+       <span><p>points<p></span>
+      </div>
+        <p class="card-text text-white time-remaining">Time remaining: ${timeLeft} seconds</p>
         ${
           passed
             ? `
