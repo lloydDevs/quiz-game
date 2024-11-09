@@ -1,0 +1,62 @@
+@import url(variables.css);
+
+.play-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  border-bottom: 1px solid var(--line-clr);
+}
+.questions {
+  border-left: 1px solid var(--line-clr);
+  padding-left: 20px;
+}
+.play-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.score {
+  padding: 10px;
+  text-align: end;
+}
+footer {
+  display: flex;
+  justify-content: end;
+}
+.game-mechanics > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-mechanics > div span svg {
+  transition: transform 0.3s ease;
+}
+
+.game-mechanics > div span svg:hover {
+  transform: scale(1.3); /* Adjust the scale as needed */
+}
+button{
+    background: none;
+    border: none;
+}
+#game-mechanics.close{
+    height: 30px;
+    text-wrap: nowrap;
+    overflow:hidden;
+}
+.bg-none{
+    background: none;
+}
+@media (max-width: 768px) {
+  .play-details {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+  }
+  .play-info {
+    grid-template-columns: 1fr;
+  }
+  .questions {
+    border-left: none;
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,86 @@
+@import url(variables.css);
+.container > div > img {
+  width: 20rem;
+}
+/* Basic container styling */
+.container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Profile layout */
+.profile-header {
+  grid-column: 1 / -1;
+}
+
+.profile-info {
+  grid-column: 1 / -1;
+}
+
+.profile-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.profile-picture {
+  text-align: center;
+  position: relative;
+}
+
+.profile-picture img {
+  width: 100%;
+  max-width: 250px;
+}
+
+.contact-info {
+  margin-top: 20px;
+  h3 {
+    margin-bottom: 20px;
+  }
+  p {
+    line-height: 1rem;
+  }
+}
+.profile-details article {
+  border-left: 1px solid var(--line-clr);
+}
+article {
+  background-color: none;
+  padding: 15px;
+}
+.one,
+.two,
+.three {
+  position: absolute;
+  background-color: rgb(104, 104, 104);
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  font-size: 0.9rem;
+}
+.one {
+  top: 20px;
+  left: 50px;
+}
+.two {
+  right: 0;
+  top: 30%;
+}
+.three {
+  bottom: 0;
+  left: 10px;
+}
+#carouselExampleControlsNoTouching{
+    height: max-content;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+  .profile-details {
+    grid-template-columns: 1fr;
+  }
+  .profile-details article {
+    border-left: none;
+  }
+}
