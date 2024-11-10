@@ -29,8 +29,8 @@
   align-items: center;
 }
 ol li svg {
-    fill: #a6ff7d;
-  }
+  fill: #a6ff7d;
+}
 ol li:first-child svg {
   fill: gold;
 }
@@ -43,7 +43,7 @@ ol li:nth-child(3) svg {
 @media (max-width: 480px) {
   .name-container li {
     grid-template-columns: 1fr;
-    gap: 5px; 
+    gap: 5px;
     padding: 6px;
   }
 

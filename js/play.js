@@ -184,12 +184,16 @@ const checkAnswer = (selectedChoice) => {
 
 // Function to update the score
 const updateScore = () => {
-  scoreElement.textContent = `${score} points`;
+  // Just adding some small details about plural and singular
+  scoreElement.textContent = ` ${score} ${score == 0 ? "point" : "points"}`;
 };
 
 // Function to update the timer
 const updateTimer = () => {
-  timeElement.textContent = `Time Left: ${timeLeft} seconds`;
+  timeElement.textContent = `Time Left: ${
+    timeLeft} ${
+    timeLeft == 0 ? "second" : "seconds"
+  }`;
   if (timeLeft === 0) {
     clearInterval(timerInterval);
     showResult();
@@ -240,9 +244,12 @@ const showResult = () => {
       <div class="card-body ${bodyClass}">
       <div class="score-board">
        <h1 class="card-text text-white">${score}</h1> 
-       <span><p>points<p></span>
+       <span><p>${score == 0 ? "point" : "points"}<p></span>
       </div>
-        <p class="card-text text-white time-remaining">Time remaining: ${timeLeft} seconds</p>
+        <p class="card-text text-white time-remaining">Time remaining: ${
+          timeLeft} ${
+          timeLeft == 0 ? `second` : `seconds`
+        }</p>
         ${
           passed
             ? `

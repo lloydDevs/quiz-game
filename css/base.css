@@ -1,33 +1,36 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-html{
-    font-family: Poppins, 'Segoe UI', Tahoma;
-    line-height: 1.5rem;
+html {
+  font-family: Poppins, "Segoe UI", Tahoma;
+  line-height: 1.5rem;
 }
-body{
-    min-height: 100vh;
-    min-height: 100dvh;
-    background-color: var(--base-clr);
-    color: var(--text-clr);
-    display: grid;
-    grid-template-columns: auto 1fr;
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--base-clr);
+  color: var(--text-clr);
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
-main{
-    padding: min(30px, 7%);
+main {
+  padding: min(30px, 7%);
 }
-main p{
-    color: var(--secondary-text-clr);
-    margin-top: 5px;
-    margin-bottom: 15px;
+main p {
+  color: var(--secondary-text-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
-h2, p{ margin-top: 1em;}
-@media(max-width: 800px){
-    body{
-        grid-template-columns: 1fr;
-    }
-    main{
-        padding: 2em 1em 60px 1em;
-    }
+h2,
+p {
+  margin-top: 1em;
+}
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  main {
+    padding: 2em 1em 60px 1em;
+  }
 }

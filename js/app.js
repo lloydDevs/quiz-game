@@ -8,6 +8,7 @@ function toggleSidebar() {
   //collecting all the class in the sidebar to remove the class "show" to hide the element when closing the toggle button
   closeAllSubMenus();
 }
+
 //Minimizing the sidebar to just icons
 function toggleSubMenu(button) {
   //will close the sidebar when trying to open another 1

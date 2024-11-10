@@ -72,8 +72,8 @@ article {
   bottom: 0;
   left: 10px;
 }
-#carouselExampleControlsNoTouching{
-    height: max-content;
+#carouselExampleControlsNoTouching {
+  height: max-content;
 }
 /* Responsive design */
 @media (max-width: 768px) {

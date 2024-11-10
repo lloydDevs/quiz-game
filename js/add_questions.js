@@ -3,8 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("add-question-form");
   const popup = document.getElementById("success-popup");
 
-  // Initial array of questions (you can customize this)
-  const questions = [];
+  // Getting the quesrtions of initializing it as an empty array
+  let questions = JSON.parse(localStorage.getItem("questions")) || [];
+
+  // for saving questions to local storage
+  function saveQuestionsToLocalStorage() {
+    localStorage.setItem("questions", JSON.stringify(questions));
+  }
 
   // Function to render questions
   function renderQuestions() {
@@ -14,12 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const questionItem = document.createElement("div");
       questionItem.classList.add("question-box");
       questionItem.innerHTML = `
-                <strong>Question ${index + 1}:</strong> ${question}<br>
-                <ul>
-                    ${options.map((option) => `<li>${option}</li>`).join("")}
-                </ul>
-                <em style="color: green;">Answer: ${answer}</em>
-            `;
+        <strong>Question ${index + 1}:</strong> ${question}<br>
+        <ul>
+          ${options.map((option) => `<li>${option}</li>`).join("")}
+        </ul>
+        <em style="color: green;">Answer: ${answer}</em>
+      `;
       container.appendChild(questionItem);
     });
   }
@@ -40,6 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 
+  // Render questions from local storage on page load
+  renderQuestions();
+
   // Form submission handler
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -57,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
       options: [option1, option2, option3],
       answer: answer,
     });
+
+    // Save updated questions to local storage
+    saveQuestionsToLocalStorage();
 
     // Clear the form inputs
     form.reset();
