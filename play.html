@@ -156,12 +156,13 @@
               aria-expanded="false"
               onclick="toggleDropdown()"
             >
-              Difficulty
+              Difficulty: <span id="selectedDifficulty">All</span>
             </button>
             <ul class="dropdown-menu" id="dropdownMenu">
-              <li><a href="#">Easy</a></li>
-              <li><a href="#">Medium</a></li>
-              <li><a href="#">Hard</a></li>
+              <li><a href="#" class="difficulty-option" data-difficulty="all">All</a></li>
+              <li><a href="#" class="difficulty-option" data-difficulty="easy">Easy</a></li>
+              <li><a href="#" class="difficulty-option" data-difficulty="medium">Medium</a></li>
+              <li><a href="#" class="difficulty-option" data-difficulty="hard">Hard</a></li>
             </ul>
           </div>
         </aside>
