@@ -1,0 +1,46 @@
+// Global styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Poppins, "Segoe UI", Tahoma;
+  line-height: 1.5rem;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: $base-clr;
+  color: $text-clr;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  // Main section styles
+  main {
+    padding: min(30px, 7%);
+
+    p {
+      color: $secondary-text-clr;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    h2,
+    p {
+      margin-top: 1em;
+    }
+  }
+}
+
+// Media query for responsive design
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 2em 1em 60px 1em;
+  }
+}

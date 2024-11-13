@@ -190,8 +190,7 @@ const updateScore = () => {
 
 // Function to update the timer
 const updateTimer = () => {
-  timeElement.textContent = `Time Left: ${
-    timeLeft} ${
+  timeElement.textContent = `Time Left: ${timeLeft} ${
     timeLeft == 0 ? "second" : "seconds"
   }`;
   if (timeLeft === 0) {
@@ -246,10 +245,9 @@ const showResult = () => {
        <h1 class="card-text text-white">${score}</h1> 
        <span><p>${score == 0 ? "point" : "points"}<p></span>
       </div>
-        <p class="card-text text-white time-remaining">Time remaining: ${
-          timeLeft} ${
-          timeLeft == 0 ? `second` : `seconds`
-        }</p>
+        <p class="card-text text-white time-remaining">Time remaining: ${timeLeft} ${
+    timeLeft == 0 ? `second` : `seconds`
+  }</p>
         ${
           passed
             ? `
@@ -271,12 +269,23 @@ const showResult = () => {
   choicesElement.innerHTML = "";
   choicesElement.appendChild(resultElement);
 
-  // Add a "Play Again" button
+  // Add a "Play Again" button inside a wrapper
   const playAgainButton = document.createElement("button");
   playAgainButton.textContent = "Play Again";
-  playAgainButton.classList.add("btn", "btn-dark", "mt-3");
+  playAgainButton.classList.add("btn", "center"); // Add appropriate classes for the button
+
+  // Create the wrapper div and add the button to it
+  const btnWrapper = document.createElement("div");
+  btnWrapper.classList.add("btn-wrapper");
+
+  // Append the button to the wrapper div
+  btnWrapper.appendChild(playAgainButton);
+
+  // Add event listener to the button
   playAgainButton.addEventListener("click", resetGame);
-  choicesElement.appendChild(playAgainButton);
+
+  // Append the wrapper to the choicesElement
+  choicesElement.appendChild(btnWrapper);
 };
 
 // Function to reset the game

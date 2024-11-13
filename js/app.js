@@ -32,3 +32,17 @@ function closeAllSubMenus() {
 function toggleMechanics() {
   mechanics.classList.toggle("close");
 }
+function toggleDropdown() {
+  var menu = document.getElementById("dropdownMenu");
+  var isVisible = menu.style.display === "block";
+  menu.style.display = isVisible ? "none" : "block";
+}
+
+// Close dropdown if clicked outside
+document.addEventListener("click", function (event) {
+  var menu = document.getElementById("dropdownMenu");
+  if (!event.target.closest(".dropdown-container")) {
+    menu.style.display = "none";
+  }
+});
+
