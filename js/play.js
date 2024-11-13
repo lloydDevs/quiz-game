@@ -300,11 +300,15 @@ const resetGame = () => {
   updateTimer();
 };
 
-// Event listener for the difficulty selector
-difficultyItems.forEach((item) => {
-  item.addEventListener("click", (e) => {
-    selectedDifficulty = e.target.textContent.toLowerCase();
-    difficultyButton.textContent = e.target.textContent; // Update button text
+document.querySelectorAll('.difficulty-option').forEach((item) => {
+  item.addEventListener('click', function(e) {
+    // Get selected difficulty
+    const difficulty = e.target.getAttribute('data-difficulty');
+    // Update the displayed difficulty button text
+    document.getElementById('selectedDifficulty').textContent = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+    
+    // Update selectedDifficulty variable and refresh questions
+    selectedDifficulty = difficulty;
     currentQuestionIndex = 0;
     score = 0;
     timeLeft = 20;
@@ -320,7 +324,6 @@ difficultyItems.forEach((item) => {
 updateQuestion();
 updateScore();
 updateTimer();
-
 export default function Component() {
   return null; // This component doesn't render anything, it's just for initialization
 }
