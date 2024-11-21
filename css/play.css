@@ -240,6 +240,23 @@ button {
 .dropdown-menu li a:hover {
   color: #343a40;
 }
+.animate {
+  animation: clickEffect 0.3s ease-in-out;
+}
+
+/* Define the animation keyframes */
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 768px) {
   .play-details {
     grid-template-columns: 1fr;
