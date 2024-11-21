@@ -178,11 +178,20 @@ const showResult = () => {
   choicesElement.innerHTML = "";
   choicesElement.appendChild(resultElement);
 
-  // Add a "Play Again" button inside a wrapper
-  const playAgainButton = document.createElement("button");
-  playAgainButton.textContent = "Play Again";
-  playAgainButton.classList.add("btn", "center");
+ // Create a "Play Again" button inside a wrapper
+const playAgainButton = document.createElement("button");
+playAgainButton.textContent = "Play Again";
+playAgainButton.classList.add("btn", "center");
 
+// Add an event listener to handle animation on click
+playAgainButton.addEventListener("click", () => {
+  playAgainButton.classList.add("animate");
+
+  // Remove the animation class after it ends to allow re-triggering
+  playAgainButton.addEventListener("animationend", () => {
+    playAgainButton.classList.remove("animate");
+  }, { once: true });
+});
   // Create the wrapper div and add the button to it
   const btnWrapper = document.createElement("div");
   btnWrapper.classList.add("btn-wrapper");
