@@ -6,7 +6,7 @@ A brief description of what your project does and why it exists.
 
 - The Play, Create Questions, and Profile is Functional and the remaining don't have content yet.
 - Play - I have here mock data questions and display it dynamically in my play.html
-  ###Features
+  --Features
   - Display scores simultaneously
   - Timer
   - Result

@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "sass css/main.scss css/main.css --watch"
+    "build-css": "sass css/main.scss css/main.css --watch",
+    "start": "http-server -c-1 --port 8080 -a 0.0.0.0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "http-server": "^14.1.1",
     "sass": "^1.80.7"
   }
 }

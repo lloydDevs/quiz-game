@@ -19,6 +19,9 @@ body {
 }
 body main {
   padding: min(30px, 7%);
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 1s ease forwards;
 }
 body main p {
   color: #b0b3c1;
@@ -248,6 +251,29 @@ form#add-question-form button[type=submit]:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+main .play-header {
+  animation-delay: 0.3s;
+}
+
+main .play-info {
+  animation-delay: 0.6s;
+}
+
+main .play-details {
+  animation-delay: 0.9s;
+}
+
+main footer {
+  animation-delay: 1.2s;
+}
+
+/* Keyframe for slide-in animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 @media (max-width: 800px) {

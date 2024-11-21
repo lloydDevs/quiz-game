@@ -248,12 +248,36 @@ form#add-question-form {
     transform: translateY(0);
   }
 }
+main .play-header {
+  animation-delay: 0.3s;
+}
+
+main .play-info {
+  animation-delay: 0.6s;
+}
+
+main .play-details {
+  animation-delay: 0.9s;
+}
+
+main footer {
+  animation-delay: 1.2s;
+}
+
+/* Keyframe for slide-in animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 // Media Query
 @media (max-width: 800px) {
   .container {
     border: none;
     padding: 0;
+    padding-bottom: 60px; /* Add padding to prevent content from being hidden behind the sidebar */
   }
   #sidebar {
     height: 60px;
@@ -264,6 +288,7 @@ form#add-question-form {
     position: fixed;
     top: unset;
     bottom: 0;
+    z-index: 1000; /* Ensure the sidebar is above other content */
 
     > ul {
       padding: 0;
@@ -271,7 +296,9 @@ form#add-question-form {
       grid-auto-columns: 60px;
       grid-auto-flow: column;
       align-items: center;
-      overflow-x: scroll;
+      overflow-x: auto; /* Changed from scroll to auto */
+      -webkit-overflow-scrolling: touch; /* Improve scrolling on iOS devices */
+      height: 100%; /* Ensure the ul takes full height of the sidebar */
     }
     ul li {
       height: 100%;
@@ -283,6 +310,8 @@ form#add-question-form {
       padding: 0;
       border-radius: 0;
       justify-content: center;
+      display: flex; /* Ensure flex display */
+      align-items: center; /* Center items vertically */
     }
     ul li .sub-menu.show {
       position: fixed;
@@ -295,9 +324,11 @@ form#add-question-form {
       border-top: 1px solid var(--line-clr);
       display: flex;
       justify-content: center;
+      z-index: 1000;
 
       > div {
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
       }
       li {
         display: inline-flex;
